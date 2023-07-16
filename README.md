@@ -33,6 +33,12 @@ Tic Tac Toe is a classic game and it's fun for all ages.
 
 ### Goals
 
+- Easy and intuitive gameplay. Providing enough instructions so the users can play the game without confusion.
+- Giving clear and informative feedback to the user after each move.
+- Easy menu navigation.
+- Input validation. Prompt the users when invalid moves or inputs are made.
+- Top scores. The users should be able to see the last top scores.
+
 ### Scope
 
 ## Design
