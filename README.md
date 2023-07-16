@@ -12,6 +12,25 @@ Tic Tac Toe is a simple terminal game that can be played against another player 
 
 ### User Stories
 
+#### Target Audience
+
+Tic Tac Toe is a classic game and it's fun for all ages.
+
+#### First Time Users
+
+- As a first time user, I want to easily understands the purpose of the game.
+- As a first time user, I want to be able to see clear instructions on how to play.
+- As a first time user, I want to be able to play against another player or computer.
+- As a first time user, I want to choose my mark (X - O).
+- As a first time user, I want to be notified when making an invalid move.
+- As a first time user, I want to be able to play again and quit the game.
+- As a first time user, I want to se my score after the game ends.
+
+#### Returning Users
+
+- As a returning user, I want to easily start a new game.
+- As a returning user, I want to see the last top scores.
+
 ### Goals
 
 ### Scope
