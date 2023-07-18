@@ -47,6 +47,8 @@ Tic Tac Toe is a classic game and it's fun for all ages.
 
 ### Flowchart
 
+![Logic Flowchart](docs/flowchart.png)
+
 ## Features
 
 ### Existing Features
