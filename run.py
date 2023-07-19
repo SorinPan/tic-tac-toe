@@ -39,6 +39,19 @@ class GamePlay:
         self.second_player_mark = ''
         self.current_player = ''
         self.current_mark = ''
+    
+    def play_game(self):
+        """
+        Controls the game flow
+        """
+
+        self.board.print_board()
+
+        while True:
+            print(f"It's {self.current_player}'s turn ({self.current_mark})")
+
+            self.board.mark_position(position, self.current_mark)
+            self.board.print_board
 
 
 def main_menu():
