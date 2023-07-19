@@ -14,7 +14,17 @@ class GameBoard:
             print("------------")
         
         def mark_position(self, position, mark):
+            """
+            Adds the player's or computer's move to the board
+            """
+
             self.board[position] = mark
+        
+        def is_position_free(self, position):
+            """
+            Checks if the square chosen on the gameboard is free
+            """
+            return self.board[position].isdigit()
 
 class GamePlay:
     """
