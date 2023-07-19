@@ -26,4 +26,29 @@ class GamePlay:
         self.second_player_mark = ''
         self.current_player = ''
         self.current_mark = ''
+
+
+def main_menu():
+    """
+    Displays the Main Menu. Where the user can choose between
+    starting the game or show the instructions
+    """
+
+    print("Welcome to a classic game of Tic-Tac-Toe!\n")
+    print("1: Start Game")
+    print("2: Instructions")
+
+    option = input("Enter: 1/2\n")
+
+    if option == "1":
+        start_game = GamePlay()
+    elif option == "2":
+        print("Instructions:\n")
+        print("1: Choose your mark(X/O)")
+        print("2: Players take turns putting their marks on the empty squares on the board")
+        print("3: The first player to get 3 in a row wins.")
+    else:
+        print("Invalid choice, try again.")
+
+main_menu()
         
