@@ -12,6 +12,9 @@ class GameBoard:
             print("------------")
             print("|", self.board[6], "|", self.board[7], "|", self.board[8], "|")
             print("------------")
+        
+        def mark_position(self, position, mark):
+            self.board[position] = mark
 
 class GamePlay:
     """
@@ -19,7 +22,7 @@ class GamePlay:
     """
     
     def __init__(self):
-        self.board = Board()
+        self.board = GameBoard()
         self.first_player = ''
         self.second_player = 'Computer'
         self.first_player_mark = ''
