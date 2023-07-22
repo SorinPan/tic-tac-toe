@@ -56,6 +56,8 @@ class GamePlay:
             position = self.get_next_move()
             self.board.mark_position(position, self.current_mark)
             self.board.print_board
+        
+        self.switch_player()
 
     def initiate_players(self):
         """
@@ -91,6 +93,21 @@ class GamePlay:
                 return position
             else:
                 print("Invalid move! Please try again.")
+    
+    def switch_player(self):
+        """
+        Switch between players
+        """
+        
+        if self.current_player == self.second_player:
+            self.current_player = self.first_player
+        else:
+            self.current_player = self.second_player
+        
+        if self.current_mark == self.second_player_mark:
+            self.current_mark = self.first_player_mark
+        else:
+            self.current_mark = self.second_player_mark
 
 
 def main_menu():
