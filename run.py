@@ -48,10 +48,12 @@ class GamePlay:
         """
 
         self.board.print_board()
+        self.initiate_players()
 
         while True:
             print(f"It's {self.current_player}'s turn ({self.current_mark})")
-
+            
+            position = self.get_next_move()
             self.board.mark_position(position, self.current_mark)
             self.board.print_board
 
@@ -59,7 +61,7 @@ class GamePlay:
         """
         Initializes players. Takes in player's name and their choice of mark
         """
-        
+
         self.first_player = input("Enter First Player name: ")
         mark = input("Choose your mark (X/O): ")
 
@@ -76,6 +78,19 @@ class GamePlay:
             self.current_mark = self.first_player_mark
         else:
             self.current_mark = self.second_player_mark
+    
+    def get_next_move(self):
+        while True:
+            if self.current_player == self.first_player:
+                position = int(input("Enter your move (1-9): ")) - 1
+            else:
+                avail_positions = [i for i, x in enumerate(self.board.board) if x.isdigit()]
+                position = random.choice(avail_positions)
+            
+            if self.board.is_position_free(position):
+                return position
+            else:
+                print("Invalid move! Please try again.")
 
 
 def main_menu():
