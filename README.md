@@ -81,6 +81,29 @@ Tic Tac Toe is a classic game and it's fun for all ages.
 
 ## Deployment
 
+## Development
+
+### How to Fork
+
+To Fork this project:
+
+1. Log in to GitHub.
+2. Go to the project's repository [Tic-Tac-Toe](https://github.com/SorinPan/tic-tac-toe/tree/main).
+3. Click on the Fork button at the top.
+
+### How to Clone
+
+To Clone this project:
+
+1. Log in to GitHub.
+2. Go to the project's repository [Tic-Tac-Toe](https://github.com/SorinPan/tic-tac-toe/tree/main)
+3. Click on the <> Code button at the top of the file list.
+4. Choose to clone using either HTTPS, SSH key or GitHub CLI, then copy the link provided.
+5. Go to your code editor and open a Terminal.
+6. Change the current working directory to the location where you want the cloned directory.
+7. Type in git clone, then press "Spacebar" and paste the link you copied earlier.
+8. Press "Enter" to create your clone repository.
+
 ## Credits
 
 ## Comments
