@@ -63,9 +63,21 @@ Tic Tac Toe is a classic game and it's fun for all ages.
 
 ### Languages
 
-### Tools
+- [Python](https://www.python.org)
 
 ### Libraries
+
+- [Random](https://docs.python.org/3/library/random.html?highlight=random#module-random) - Used for the Computer moves.
+
+### Tools
+
+- [GitHub](https://github.com) - Used for storing the code.
+- [Git](https://git-scm.com) - Used for version control.
+- [VSCode](https://code.visualstudio.com) - Used to develop the game.
+- [LucidChart](https://www.lucidchart.com/pages/) - Used for making flowcharts.
+- [Pipenv](https://docs.python-guide.org/dev/virtualenvs/) - For creating virtual environment and installing packages.
+- [CI Template](https://github.com/Code-Institute-Org/p3-template) - Used when creating the repository on GitHub.
+- [Bear](https://bear.app) - For planning the development, keeping notes and ideas.
 
 ## Deployment
 
