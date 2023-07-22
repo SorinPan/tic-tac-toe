@@ -26,6 +26,16 @@ class GameBoard:
         Checks if the square chosen on the gameboard is free
         """
         return self.board[position].isdigit()
+    
+    def is_board_full(self):
+        """
+        Checks if the board is full
+        """
+        
+        for x in self.board:
+            if x.isdigit():
+                return False
+        return True
 
 
 class GamePlay:
@@ -56,6 +66,10 @@ class GamePlay:
             position = self.get_next_move()
             self.board.mark_position(position, self.current_mark)
             self.board.print_board
+            
+            if self.board.is_board_full():
+                print("Game over! It's a tie!\n")
+                break
         
         self.switch_player()
 
@@ -98,7 +112,7 @@ class GamePlay:
         """
         Switch between players
         """
-        
+
         if self.current_player == self.second_player:
             self.current_player = self.first_player
         else:
