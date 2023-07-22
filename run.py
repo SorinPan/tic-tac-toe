@@ -98,7 +98,7 @@ class GamePlay:
                 print("Game over! It's a tie!\n")
                 break
         
-        self.switch_player()
+            self.switch_player()
 
     def initiate_players(self):
         """
