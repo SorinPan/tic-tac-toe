@@ -31,11 +31,34 @@ class GameBoard:
         """
         Checks if the board is full
         """
-        
+
         for x in self.board:
             if x.isdigit():
                 return False
         return True
+    
+    def is_player_winner(self, mark):
+        """
+        Checks if the current player is the winner
+        """
+        
+        win_combos = [
+            [0, 1, 2], [3, 4, 5], [6, 7, 8], # Row combinations
+            [0, 3, 6], [1, 4, 7], [2, 5, 8], # Column combinations
+            [0, 4, 8], [2, 4, 6] # Diagonal combinations
+        ]
+
+        for combo in win_combos:
+            all_match = True
+            for pos in combo:
+                if self.board[pos] != mark:
+                    all_match = False
+                    break
+            
+            if all_match:
+                return True
+        
+        return False
 
 
 class GamePlay:
@@ -66,6 +89,10 @@ class GamePlay:
             position = self.get_next_move()
             self.board.mark_position(position, self.current_mark)
             self.board.print_board
+
+            if self.board.is_player_winner(self.current_mark):
+                print(f"{self.current_player} is the winner!")
+                break
             
             if self.board.is_board_full():
                 print("Game over! It's a tie!\n")
