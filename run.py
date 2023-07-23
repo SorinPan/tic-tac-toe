@@ -74,6 +74,13 @@ class GameBoard:
                 return True
         
         return False
+    
+    def reset_game_board(self):
+        """
+        Resets the game board so the user can play a new round
+        """
+
+        self.board = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
 
 
 class GamePlay:
@@ -100,6 +107,7 @@ class GamePlay:
         self.initiate_players()
 
         while self.rounds_played < 5:
+            self.board.reset_game_board()
             self.board.print_board()
 
             while True:
