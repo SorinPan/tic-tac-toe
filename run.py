@@ -88,7 +88,7 @@ class GamePlay:
             
             position = self.get_next_move()
             self.board.mark_position(position, self.current_mark)
-            self.board.print_board
+            self.board.print_board()
 
             if self.board.is_player_winner(self.current_mark):
                 print(f"{self.current_player} is the winner!")
