@@ -89,6 +89,7 @@ class GamePlay:
         self.second_player_mark = ""
         self.current_player = ""
         self.current_mark = ""
+        self.rounds_played = 0
 
     def play_game(self):
         """
@@ -98,22 +99,28 @@ class GamePlay:
         self.board.print_board()
         self.initiate_players()
 
-        while True:
-            print(f"It's {self.current_player}'s turn ({self.current_mark})")
-            
-            position = self.get_next_move()
-            self.board.mark_position(position, self.current_mark)
+        while self.rounds_played < 5:
             self.board.print_board()
 
-            if self.board.is_player_winner(self.current_mark):
-                print(f"{self.current_player} is the winner!")
-                break
+            while True:
+                print(f"It's {self.current_player}'s turn ({self.current_mark})")
+                position = self.get_next_move()
+                self.board.mark_position(position, self.current_mark)
+                self.board.print_board()
+
+                if self.board.is_player_winner(self.current_mark):
+                    print(f"{self.current_player} is the winner!")
+                    break
             
-            if self.board.is_board_full():
-                print("Game over! It's a tie!\n")
-                break
+                if self.board.is_board_full():
+                    print("Game over! It's a tie!\n")
+                    break
         
-            self.switch_player()
+                self.switch_player()
+            
+            self.rounds_played += 1
+        
+        print("Game Over!")
 
     def initiate_players(self):
         """
