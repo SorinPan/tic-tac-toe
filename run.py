@@ -159,18 +159,28 @@ class GamePlay:
         else:
             self.current_mark = self.second_player_mark
     
-    def get_next_move(self):
+    def get_human_move(self):
         while True:
-            if self.current_player == self.first_player:
-                position = int(input("Enter your move (1-9): ")) - 1
-            else:
-                avail_positions = [i for i, x in enumerate(self.board.board) if x.isdigit()]
-                position = random.choice(avail_positions)
-            
+            position = int(input(f"{self.current_player}, enter your move (1-9): ")) - 1
+
             if self.board.is_position_free(position):
                 return position
             else:
                 print("Invalid move! Please try again.")
+    
+    def get_computer_move(self):
+        avail_positions = [i for i, x in enumerate(self.board.board) if x.isdigit()]
+        position = random.choice(avail_positions)
+        return position
+    
+    def get_next_move(self):
+        if self.current_player == self.first_player:
+            return self.get_human_move()
+        else:
+            if self.second_player == "Computer":
+                return self.get_computer_move()
+            else:
+                return self.get_human_move()
     
     def switch_player(self):
         """
