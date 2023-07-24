@@ -91,7 +91,7 @@ class GamePlay:
     def __init__(self):
         self.board = GameBoard()
         self.first_player = ""
-        self.second_player = "Computer"
+        self.second_player = ""
         self.first_player_mark = ""
         self.second_player_mark = ""
         self.current_player = ""
@@ -136,6 +136,13 @@ class GamePlay:
         """
 
         self.first_player = input("Enter First Player name: ")
+        player_choice = input("Would you like to play against computer? (y/n): \n")
+
+        if player_choice.lower() == "n":
+            self.second_player = input("Enter Second Player name: ")
+        else:
+            self.second_player = "Computer"
+
         mark = input("Choose your mark (X/O): ")
 
         if mark == "X":
