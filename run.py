@@ -109,6 +109,7 @@ class GamePlay:
         self.initiate_players()
 
         while self.rounds_played < 5:
+            self.display_score()
             self.board.reset_game_board()
             self.board.print_board()
 
@@ -131,7 +132,6 @@ class GamePlay:
             
             self.rounds_played += 1
         
-        self.display_score()
         print("Game Over!")
 
     def initiate_players(self):
@@ -208,7 +208,7 @@ class GamePlay:
             self.second_player_score += 1
     
     def display_score(self):
-        print("Final Score:")
+        print(f"Round {self.rounds_played + 1} - Current Score:")
         print(f"{self.first_player}: {self.first_player_score}")
         print(f"{self.second_player}: {self.second_player_score}")
 
