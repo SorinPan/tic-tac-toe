@@ -97,6 +97,8 @@ class GamePlay:
         self.current_player = ""
         self.current_mark = ""
         self.rounds_played = 0
+        self.first_player_score = 0
+        self.second_player_score = 0
 
     def play_game(self):
         """
@@ -118,6 +120,7 @@ class GamePlay:
 
                 if self.board.is_player_winner(self.current_mark):
                     print(f"{self.current_player} is the winner!")
+                    self.update_score(self.current_player)
                     break
             
                 if self.board.is_board_full():
@@ -128,6 +131,7 @@ class GamePlay:
             
             self.rounds_played += 1
         
+        self.display_score()
         print("Game Over!")
 
     def initiate_players(self):
@@ -196,6 +200,17 @@ class GamePlay:
             self.current_mark = self.first_player_mark
         else:
             self.current_mark = self.second_player_mark
+    
+    def update_score(self, winner):
+        if winner == self.first_player:
+            self.first_player_score += 1
+        elif winner == self.second_player:
+            self.second_player_score += 1
+    
+    def display_score(self):
+        print("Final Score:")
+        print(f"{self.first_player}: {self.first_player_score}")
+        print(f"{self.second_player}: {self.second_player_score}")
 
 
 def main_menu():
