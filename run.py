@@ -167,12 +167,18 @@ class GamePlay:
     
     def get_human_move(self):
         while True:
-            position = int(input(f"{self.current_player}, enter your move (1-9): ")) - 1
+            try:
+                position = int(input(f"{self.current_player}, enter your move (1-9): ")) - 1
 
-            if self.board.is_position_free(position):
-                return position
-            else:
-                print("Invalid move! Please try again.")
+                if 0 <= position < 9:
+                    if self.board.is_position_free(position):
+                        return position
+                    else:
+                        print("Invalid move! Please try again.")
+                else:
+                    print("Invalid input! Please enter a number between 1 and 9.")
+            except ValueError:
+                print("Invalid input! Please enter a number between 1 and 9.")
     
     def get_computer_move(self):
         avail_positions = [i for i, x in enumerate(self.board.board) if x.isdigit()]
@@ -291,4 +297,5 @@ def main_menu():
         print("Invalid choice, try again.")
 
 
-main_menu()
+if __name__ == "__main__":
+    main_menu()
