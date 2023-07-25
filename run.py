@@ -134,6 +134,7 @@ class GamePlay:
             self.rounds_played += 1
         
         print("Game Over!")
+        self.game_over(self.first_player, self.second_player, self.first_player_score, self.second_player_score)
 
     def initiate_players(self):
         """
@@ -221,7 +222,7 @@ class GamePlay:
         current_date = datetime.datetime.now().strftime('%Y-%m-%d')
         score.append_row([winner_name, winner_score, current_date])
     
-    def display_top_scores():
+    def display_top_scores(self):
         """
         Takes the scores from the worksheet and sorts them from highest to lowest
         and displays the top 10 highest
@@ -234,6 +235,34 @@ class GamePlay:
         print("-----------------------")
         for i, entry in enumerate(sorted_scores[:10], start=1):
             print(f"{i}. {entry['NAME']}: {entry['SCORE']} {entry['DATE']}")
+    
+    def game_over(self, first_player_name, second_player_name, first_player_score, second_player_score):
+        """
+        Displays the final score between the players, calls the update_google_sheet
+        and display_top_scores. Asks the players if they want to play again.
+        """
+
+        print("Game Over!")
+        print("Final Score:")
+        print(f"{self.first_player}: {self.first_player_score}")
+        print(f"{self.second_player}: {self.second_player_score}")
+
+        if first_player_score > second_player_score:
+            print(f"Congratulations, {self.first_player}! You WON the game!")
+            self.update_google_sheet(self.first_player, self.first_player_score)
+        elif first_player_score < second_player_score:
+            print(f"Congratulations, {self.second_player}! You WON the game!")
+            self.update_google_sheet(second_player_name, second_player_score)
+        else:
+            print("It's a tie")
+        
+        self.display_top_scores()
+
+        play_again = input("Would you like to play again? (y/n): ")
+        if play_again.lower() == "y":
+            main_menu
+        else:
+            print("Thank you for playing!")
 
 
 def main_menu():
