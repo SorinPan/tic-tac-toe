@@ -281,20 +281,21 @@ def main_menu():
     print("1: Start Game")
     print("2: Instructions")
 
-    option = input("Enter: 1/2\n")
+    try:
+        option = input("Enter: 1/2\n")
 
-    if option == "1":
-        start_game = GamePlay()
-        start_game.play_game()
-    elif option == "2":
-        print("Instructions:\n")
-        print("1: Choose your mark(X/O)")
-        print(
-            "2: Players take turns putting their marks on the empty squares on the board"
-        )
-        print("3: The first player to get 3 in a row wins.")
-    else:
-        print("Invalid choice, try again.")
+        if option == "1":
+            start_game = GamePlay()
+            start_game.play_game()
+        elif option == "2":
+            print("Instructions:\n")
+            print("1: Choose your mark(X/O)")
+            print("2: Players take turns putting their marks on the empty squares on the board")
+            print("3: The first player to get 3 in a row wins.")
+        else:
+            print("Invalid choice, try again.")
+    except Exception as e:
+        print(f"An error occured: {e}")
 
 
 if __name__ == "__main__":
