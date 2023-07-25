@@ -1,6 +1,7 @@
 import random
 import datetime
 import gspread
+import os
 from google.oauth2.service_account import Credentials
 from gspread.exceptions import GSpreadException, APIError, WorksheetNotFound
 
@@ -106,19 +107,20 @@ class GamePlay:
         """
         Controls the game flow
         """
-
         self.board.print_board()
         self.initiate_players()
 
         while self.rounds_played < 5:
             self.display_score()
             self.board.reset_game_board()
+            self.clear_terminal()
             self.board.print_board()
 
             while True:
                 print(f"It's {self.current_player}'s turn ({self.current_mark})")
                 position = self.get_next_move()
                 self.board.mark_position(position, self.current_mark)
+                self.clear_terminal()
                 self.board.print_board()
 
                 if self.board.is_player_winner(self.current_mark):
@@ -276,6 +278,13 @@ class GamePlay:
             main_menu
         else:
             print("Thank you for playing!")
+    
+
+    def clear_terminal(self):
+        """
+        Clears the terminal screen before displaying the game board again
+        """
+        os.system('cls' if os.name == 'nt' else 'clear')
 
 
 def main_menu():
