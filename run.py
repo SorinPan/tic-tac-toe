@@ -1,4 +1,5 @@
 import random
+import datetime
 import gspread
 from google.oauth2.service_account import Credentials
 
@@ -211,6 +212,28 @@ class GamePlay:
         print(f"Round {self.rounds_played + 1} - Current Score:")
         print(f"{self.first_player}: {self.first_player_score}")
         print(f"{self.second_player}: {self.second_player_score}")
+    
+    def update_google_sheet(self, winner_name, winner_score):
+        """
+        Updates the worksheet with the winner's name, score and date
+        """
+
+        current_date = datetime.datetime.now().strftime('%Y-%m-%d')
+        score.append_row([winner_name, winner_score, current_date])
+    
+    def display_top_scores():
+        """
+        Takes the scores from the worksheet and sorts them from highest to lowest
+        and displays the top 10 highest
+        """
+
+        score_data = score.get_all_records()
+        sorted_scores = sorted(score_data, key=lambda x: x['SCORE'], reverse=True)
+
+        print("Top 10 Highest Scores:")
+        print("-----------------------")
+        for i, entry in enumerate(sorted_scores[:10], start=1):
+            print(f"{i}. {entry['NAME']}: {entry['SCORE']} {entry['DATE']}")
 
 
 def main_menu():
