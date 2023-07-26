@@ -205,4 +205,10 @@ To Clone this project:
 
 ## Credits
 
+[How to clear the screen](https://www.geeksforgeeks.org/clear-screen-python/)
+[Readme](https://github.com/kera-cudmore/readme-examples/tree/main)
+[W3Schools](https://www.w3schools.com/python/)
+https://www.w3schools.com/python/ref_func_enumerate.asp
+[Python DateTime Format Using Strftime\(\)](https://pynative.com/python-datetime-format-strftime/)
+
 ## Comments
