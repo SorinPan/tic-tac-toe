@@ -252,8 +252,10 @@ class GamePlay:
             sorted_scores = sorted(score_data, key=lambda x: x['SCORE'], reverse=True)
 
             print(app_art.TOP_SCORES)
+            print("NAME" + " " * 22 + "SCORE" + " " * 15 + "DATE")
+            print("-" * 61)
             for i, entry in enumerate(sorted_scores[:10], start=1):
-                print(f"{i}. {entry['NAME']}: {entry['SCORE']} {entry['DATE']}")
+                print(f"{i}. {entry['NAME']: <25} {entry['SCORE']: <25} {entry['DATE']}")
         except (GSpreadException, APIError, WorksheetNotFound) as e:
             print(f"Something went wrong. Top Score can't be displayed: {e}")
     
