@@ -150,15 +150,15 @@ class GamePlay:
         Initializes players. Takes in player's name and their choice of mark
         """
 
-        self.first_player = input("Enter First Player name: ")
+        self.first_player = input("Enter First Player name: \n")
         player_choice = input("Would you like to play against computer? (y/n): \n")
 
         if player_choice.lower() == "n":
-            self.second_player = input("Enter Second Player name: ")
+            self.second_player = input("Enter Second Player name: \n")
         else:
             self.second_player = "Computer"
 
-        mark = input("Choose your mark (X/O): ")
+        mark = input("Choose your mark (X/O): \n")
 
         if mark == "X":
             self.first_player_mark = "X"
@@ -177,7 +177,7 @@ class GamePlay:
     def get_human_move(self):
         while True:
             try:
-                position = int(input(f"{self.current_player}, enter your move (1-9): ")) - 1
+                position = int(input(f"{self.current_player}, enter your move (1-9): \n")) - 1
 
                 if 0 <= position < 9:
                     if self.board.is_position_free(position):
@@ -279,7 +279,7 @@ class GamePlay:
         
         self.display_top_scores()
 
-        play_again = input("Would you like to play again? (y/n): ")
+        play_again = input("Would you like to play again? (y/n): \n")
         if play_again.lower() == "y":
             main_menu
         else:
