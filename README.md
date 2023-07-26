@@ -95,6 +95,7 @@ After the top scores are updated. A list of the highest 10 top scores will be di
 ### Python Validation
 
 Used Code Institute's own python validator [CI Python Linter](https://pep8ci.herokuapp.com/)
+For some reason it doesn't like white spaces.
 
 <details><summary>Python</summary>
 <img src="docs/python-validation.png">

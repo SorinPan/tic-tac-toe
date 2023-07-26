@@ -293,7 +293,7 @@ class GamePlay:
 
         play_again = input("Would you like to play again? (y/n): \n")
         if play_again.lower() == "y":
-            main_menu
+            main_menu()
         else:
             print("Thank you for playing!")
     
