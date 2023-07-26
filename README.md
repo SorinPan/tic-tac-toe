@@ -43,7 +43,6 @@ Tic Tac Toe is a classic game and it's fun for all ages.
 - Input validation. Prompt the users when invalid moves or inputs are made.
 - Top scores. The users should be able to see the last top scores.
 
-### Scope
 
 ## Design
 
@@ -92,6 +91,15 @@ After the top scores are updated. A list of the highest 10 top scores will be di
 - Make the Computer smarter. Right now it chooses the moves only randomly.
 
 ## Testing
+
+### Python Validation
+
+Used Code Institute's own python validator [CI Python Linter](https://pep8ci.herokuapp.com/)
+
+<details><summary>Python</summary>
+<img src="docs/python-validation.png">
+</details>
+
 
 ## Bugs
 
