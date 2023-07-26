@@ -17,10 +17,13 @@ INSTRUCTIONS = """
              =======================     
 
  1 - The game is played on a 3x3 square board.      
- 2 - The players take turns on placing their mark (X/O) in the empty squares.                         
- 3 - The goal is to get three marks in a row (up, down, across or diagonally).
+ 2 - The players take turns on placing their mark (X/O), 
+     in the empty squares.                         
+ 3 - The goal is to get three marks in a row (up, down, 
+     across or diagonally).
  4 - The first player to get three in a row wins the round.      
- 5 - If all nine squares are filled and no player has 3 in a row. The round end in a tie.                                  
+ 5 - If all nine squares are filled and no player has 3 in a row. 
+     The round end in a tie.                                  
 
 -+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 """

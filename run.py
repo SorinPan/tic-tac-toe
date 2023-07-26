@@ -2,6 +2,7 @@ import random
 import datetime
 import gspread
 import os
+import app_art
 from google.oauth2.service_account import Credentials
 from gspread.exceptions import GSpreadException, APIError, WorksheetNotFound
 
@@ -142,7 +143,7 @@ class GamePlay:
             
             self.rounds_played += 1
         
-        print("Game Over!")
+        
         self.game_over(self.first_player, self.second_player, self.first_player_score, self.second_player_score)
 
     def initiate_players(self):
@@ -250,8 +251,7 @@ class GamePlay:
             score_data = score.get_all_records()
             sorted_scores = sorted(score_data, key=lambda x: x['SCORE'], reverse=True)
 
-            print("Top 10 Highest Scores:")
-            print("-----------------------")
+            print(app_art.TOP_SCORES)
             for i, entry in enumerate(sorted_scores[:10], start=1):
                 print(f"{i}. {entry['NAME']}: {entry['SCORE']} {entry['DATE']}")
         except (GSpreadException, APIError, WorksheetNotFound) as e:
@@ -262,17 +262,16 @@ class GamePlay:
         Displays the final score between the players, calls the update_google_sheet
         and display_top_scores. Asks the players if they want to play again.
         """
-
-        print("Game Over!")
-        print("Final Score:")
+        print(app_art.GAME_OVER)
+        print("Final Score:\n")
         print(f"{self.first_player}: {self.first_player_score}")
         print(f"{self.second_player}: {self.second_player_score}")
 
         if first_player_score > second_player_score:
-            print(f"Congratulations, {self.first_player}! You WON the game!")
+            print(f"Congratulations, {self.first_player}! You WON the game!\n")
             self.update_google_sheet(self.first_player, self.first_player_score)
         elif first_player_score < second_player_score:
-            print(f"Congratulations, {self.second_player}! You WON the game!")
+            print(f"Congratulations, {self.second_player}! You WON the game!\n")
             self.update_google_sheet(second_player_name, second_player_score)
         else:
             print("It's a tie")
@@ -299,9 +298,9 @@ def main_menu():
     starting the game or show the instructions
     """
 
-    print("Welcome to a classic game of Tic-Tac-Toe!\n")
+    print(app_art.LOGO)
     print("1: Start Game")
-    print("2: Instructions")
+    print("2: Instructions\n")
 
     try:
         option = input("Enter: 1/2\n")
@@ -310,10 +309,7 @@ def main_menu():
             start_game = GamePlay()
             start_game.play_game()
         elif option == "2":
-            print("Instructions:\n")
-            print("1: Choose your mark(X/O)")
-            print("2: Players take turns putting their marks on the empty squares on the board")
-            print("3: The first player to get 3 in a row wins.")
+            print(app_art.INSTRUCTIONS)
         else:
             print("Invalid choice, try again.")
     except Exception as e:
