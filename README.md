@@ -89,6 +89,7 @@ After the top scores are updated. A list of the highest 10 top scores will be di
 
 - Add some more colors to the text so it will be easier for the user to see the game context.
 - Make the Computer smarter. Right now it chooses the moves only randomly.
+- Add a quit option after each round.
 
 ## Testing
 
@@ -101,8 +102,61 @@ For some reason it doesn't like white spaces.
 <img src="docs/python-validation.png">
 </details>
 
+### Testing user stories
+
+#### First time Users
+
+Understanding the Purpose**
+  * As a first time user, I want to understand the purpose of the game from the moment I launch it.
+  * **Test**: Launch the game and check if the main menu displays clear instructions about the game's objective.
+* **Clear Instructions**
+  * As a first time user, I want to find clear instructions on how to play the game.
+  * **Test**: Access the instructions from the main menu and verify that the rules and gameplay are explained concisely and comprehensively.
+* **Choose Opponent and Mark**
+  * As a first time user, I want to be able to choose between playing against another player or the computer.
+  * **Test**: Start a new game and check if the game prompts to choose an opponent, and verify that selecting "Computer" or "Player 2" sets up the correct gameplay.
+* **Selecting My Mark**
+  * As a first time user, I want to choose my preferred mark (X or O) before starting the game.
+  * **Test**: Begin a new game and ensure that the game asks for the player's preferred mark and uses it correctly throughout the game.
+* **Invalid Move Notification**
+  * As a first time user, I want to be notified when attempting to make an invalid move (e.g., selecting an already occupied position).
+  * **Test**: During gameplay, intentionally make an invalid move and verify that the game displays an appropriate error message and prompts the user to make a valid move.
+* **Play Again and Quit**
+  * As a first time user, I want the option to play again or quit the game after a round ends.
+  * **Test**: Finish a game round and check if the game prompts the user to play again or quit, and verify that selecting "play again" restarts the game.
+* **Score Display**
+  * As a first time user, I want to see my score after the game ends.
+  * **Test**: Play multiple rounds, ensuring that the game displays the final score between the players at the end of each round.
+
+#### Returning Users
+* **Starting a New Game**
+  * As a returning user, I want to easily start a new game without any hassle.
+  * **Test**: After finishing a game, check if the game provides an option to start a new game from the main menu without any issues.
+* **Top Scores**
+  * As a returning user, I want to view the last top scores achieved by different players.
+  * **Test**: After several rounds of gameplay, verify that the game shows the top scores on the leaderboard and updates it accordingly.
+
+#### General Goals
+
+* **Intuitive Gameplay**
+  * As a user, I expect the gameplay to be easy and intuitive.
+  * **Test**: Play multiple rounds and observe if the game mechanics are straightforward and require minimal effort to understand.
+* **Clear Feedback**
+  * As a user, I want the game to provide clear and informative feedback after each move.
+  * **Test**: During gameplay, verify that the game displays appropriate messages after each move, indicating whether it was successful or not.
+* **Menu Navigation**
+  * As a user, I expect easy navigation through the game's menu.
+  * **Test**: Test the menu options, making sure that users can easily navigate between starting a game, accessing instructions, and viewing top scores.
+* **Input Validation**
+  * As a user, I want the game to handle invalid inputs gracefully.
+  * **Test**: Attempt to input invalid moves or characters during gameplay and check if the game responds with appropriate error messages.
+* **Top Scores Visibility**
+  * As a user, I want to easily access the last top scores achieved in the game.
+  * **Test**: Verify that the game displays the last top scores prominently and provides a clear view of the players' names, scores, and dates.
 
 ## Bugs
+
+- Clears the terminal screen too quickly and doesn't show when the computer makes a move.
 
 ## Technologies Used
 
