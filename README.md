@@ -210,5 +210,6 @@ To Clone this project:
 [W3Schools](https://www.w3schools.com/python/)
 https://www.w3schools.com/python/ref_func_enumerate.asp
 [Python DateTime Format Using Strftime\(\)](https://pynative.com/python-datetime-format-strftime/)
+[Tic-tac-toe using Python](https://www.askpython.com/python/examples/tic-tac-toe-using-python) - For inspiration.
 
 ## Comments
