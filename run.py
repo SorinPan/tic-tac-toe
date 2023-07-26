@@ -24,6 +24,7 @@ class GameBoard:
     def __init__(self):
         self.board = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
 
+
     def print_board(self):
         print("-----------------------")
         print("|      |       |      |")
@@ -39,12 +40,13 @@ class GameBoard:
         print("|      |       |      |")
         print("-----------------------")
 
+
     def mark_position(self, position, mark):
         """
         Adds the player's or computer's move to the board
         """
-
         self.board[position] = mark
+
 
     def is_position_free(self, position):
         """
@@ -52,25 +54,25 @@ class GameBoard:
         """
         return self.board[position].isdigit()
     
+    
     def is_board_full(self):
         """
         Checks if the board is full
         """
-
         for x in self.board:
             if x.isdigit():
                 return False
         return True
     
+
     def is_player_winner(self, mark):
         """
         Checks if the current player is the winner
         """
-        
         win_combos = [
-            [0, 1, 2], [3, 4, 5], [6, 7, 8], # Row combinations
-            [0, 3, 6], [1, 4, 7], [2, 5, 8], # Column combinations
-            [0, 4, 8], [2, 4, 6] # Diagonal combinations
+            [0, 1, 2], [3, 4, 5], [6, 7, 8],  # Row combinations
+            [0, 3, 6], [1, 4, 7], [2, 5, 8],  # Column combinations
+            [0, 4, 8], [2, 4, 6]  # Diagonal combinations
         ]
 
         for combo in win_combos:
@@ -85,11 +87,11 @@ class GameBoard:
         
         return False
     
+
     def reset_game_board(self):
         """
         Resets the game board so the user can play a new round
         """
-
         self.board = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
 
 
@@ -97,7 +99,6 @@ class GamePlay:
     """
     Represents the gamplay logic
     """
-
     def __init__(self):
         self.board = GameBoard()
         self.first_player = ""
@@ -109,6 +110,7 @@ class GamePlay:
         self.rounds_played = 0
         self.first_player_score = 0
         self.second_player_score = 0
+
 
     def play_game(self):
         """
@@ -146,6 +148,7 @@ class GamePlay:
         
         self.game_over(self.first_player, self.second_player, self.first_player_score, self.second_player_score)
 
+
     def initiate_players(self):
         """
         Initializes players. Takes in player's name and their choice of mark
@@ -175,6 +178,7 @@ class GamePlay:
         else:
             self.current_mark = self.second_player_mark
     
+
     def get_human_move(self):
         while True:
             try:
@@ -190,11 +194,13 @@ class GamePlay:
             except ValueError:
                 print("Invalid input! Please enter a number between 1 and 9.")
     
+
     def get_computer_move(self):
         avail_positions = [i for i, x in enumerate(self.board.board) if x.isdigit()]
         position = random.choice(avail_positions)
         return position
     
+
     def get_next_move(self):
         if self.current_player == self.first_player:
             return self.get_human_move()
@@ -204,11 +210,11 @@ class GamePlay:
             else:
                 return self.get_human_move()
     
+
     def switch_player(self):
         """
         Switch between players
         """
-
         if self.current_player == self.second_player:
             self.current_player = self.first_player
         else:
@@ -219,17 +225,20 @@ class GamePlay:
         else:
             self.current_mark = self.second_player_mark
     
+
     def update_score(self, winner):
         if winner == self.first_player:
             self.first_player_score += 1
         elif winner == self.second_player:
             self.second_player_score += 1
     
+
     def display_score(self):
         print(f"Round {self.rounds_played + 1} - Current Score:")
         print(f"{self.first_player}: {self.first_player_score}")
         print(f"{self.second_player}: {self.second_player_score}")
     
+
     def update_google_sheet(self, winner_name, winner_score):
         """
         Updates the worksheet with the winner's name, score and date
@@ -242,6 +251,7 @@ class GamePlay:
         except (GSpreadException, APIError, WorksheetNotFound) as e:
             print(f"Something went wrong. Score was not save: {e}") 
     
+
     def display_top_scores(self):
         """
         Takes the scores from the worksheet and sorts them from highest to lowest
@@ -259,6 +269,7 @@ class GamePlay:
         except (GSpreadException, APIError, WorksheetNotFound) as e:
             print(f"Something went wrong. Top Score can't be displayed: {e}")
     
+
     def game_over(self, first_player_name, second_player_name, first_player_score, second_player_score):
         """
         Displays the final score between the players, calls the update_google_sheet
@@ -299,7 +310,6 @@ def main_menu():
     Displays the Main Menu. Where the user can choose between
     starting the game or show the instructions
     """
-
     print(app_art.LOGO)
     print("1: Start Game")
     print("2: Instructions\n")

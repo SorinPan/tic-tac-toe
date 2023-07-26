@@ -54,39 +54,42 @@ Tic Tac Toe is a classic game and it's fun for all ages.
 
 ## Features
 
-### Main Menu
+### Existing Features
+
+#### Main Menu
 
 When the user starts the aplication they first see the Logo and Main Menu. Here the user can choose to start the game or see the instructions.
 
 ![Main Menu feature](docs/features/main-menu-feat.png)
 
-### Instructions
+#### Instructions
 
 The user can choose to see the instructions of the game from the main menu.
 
 ![Instructions feature](docs/features/instructions-feat.png)
 
-### Multiplayer option
+#### Multiplayer option
 
 When the game starts, the user can input their name and then choose to play against computer or another player.
 
 ![Multiplayer option feature](docs/features/options-feat.png)
 
-### Game Over
+#### Game Over
 
 After the five rounds are played, the game is over. The top scores are then updated with the winner's name, score and date.
 
 ![Game Over feat](docs/features/game-over-feat.png)
 
-### Top Scores
+#### Top Scores
 
 After the top scores are updated. A list of the highest 10 top scores will be displayed.
 
 ![Top Scores feature](docs/features/top-scores-feat.png)
 
-### Existing Features
-
 ### Future Features
+
+- Add some more colors to the text so it will be easier for the user to see the game context.
+- Make the Computer smarter. Right now it chooses the moves only randomly.
 
 ## Testing
 
